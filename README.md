@@ -20,9 +20,11 @@ You can use [this](http://i.imgur.com/y7Fnvhq.png) image for reference.
 
 ## Enabling SPI
 In the terminal, use the following command to access Raspberry Pi Configuration menu
+
 <pre>
   sudo raspi-config
 </pre>
+
 Once the menu is open navigate to **Interface Settings** using the `arrow keys`, `ENTER` to confirm selection, and `ESC` to exit. Enable the **SPI**. 
 
 
@@ -30,9 +32,9 @@ Once the menu is open navigate to **Interface Settings** using the `arrow keys`,
 
 <pre>
   sudo apt-get update
-    sudo apt-get install python3-pip --break-system-packages
-    sudo pip3 install spidev --break-system-packages
-    sudo pip3 install MFRC522 --break-system-packages
+  sudo apt-get install python3-pip --break-system-packages
+  sudo pip3 install spidev --break-system-packages
+  sudo pip3 install MFRC522 --break-system-packages
 </pre>
 
 ## Setting up the RFID-RC522
@@ -58,5 +60,11 @@ From here you can place your RFID Tag or Card near the sensor to read UID and cu
 
 <pre>
   sudo python3 Write.py
+</pre>
+
+**Step 5** Please rerun the Read.py using the following command
+
+<pre>
+  sudo python3 Read.py
 </pre>
 
