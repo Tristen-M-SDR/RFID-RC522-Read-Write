@@ -66,8 +66,6 @@ while continue_reading:
             print("Read back block 8:")
             print(read_data)
             print("Text: %s" % bytes(read_data).decode('utf-8', errors='ignore'))
-        else:
-            print("Failed to read back block 8 (possible timing or tag issue)")
-
+       
         MIFAREWriter.MFRC522_StopCrypto1()
         break
