@@ -35,6 +35,7 @@ Once the menu is open navigate to **Interface Settings** using the `arrow keys`,
   sudo apt-get install python3-pip --break-system-packages
   sudo pip3 install spidev --break-system-packages
   sudo pip3 install MFRC522 --break-system-packages
+  sudo apt install python3-lgpio
 </pre>
 
 ## Setting up the RFID-RC522
@@ -48,7 +49,7 @@ Once the menu is open navigate to **Interface Settings** using the `arrow keys`,
   cd RFID-RC522-Read-Write-main
 </pre>
 
-**Step 3** Please run the following command to the Read your current RFID Tag
+**Step 3:** Please run the following command to the Read your current RFID Tag
 
 <pre>
   sudo python3 Read.py
@@ -56,13 +57,13 @@ Once the menu is open navigate to **Interface Settings** using the `arrow keys`,
 
 From here you can place your RFID Tag or Card near the sensor to read UID and current written data on it.
 
-**Step 4** Please run the following command to Write to your RFID Tag
+**Step 4:** Please run the following command to Write to your RFID Tag
 
 <pre>
   sudo python3 Write.py
 </pre>
 
-**Step 5** Please rerun the Read.py using the following command
+**Step 5:** Please rerun the Read.py using the following command
 
 <pre>
   sudo python3 Read.py
