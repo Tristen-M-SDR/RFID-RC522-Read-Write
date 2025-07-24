@@ -61,9 +61,26 @@ From here you can place your RFID Tag or Card near the sensor to read UID and cu
   sudo python3 Write.py
 </pre>
 
-**Step 4:** Please rerun the Read.py using the following command
+**Step 4:** Please rerun the Read.py using the following command:
 
 <pre>
   sudo python3 Read.py
 </pre>
+
+## Adding your RFID-Tag to Access Control List
+
+**Step 1:** Begin by adding your RFID-Tag to the access list.
+
+<pre>
+  sudo python3 add_authorization.py
+</pre>
+
+**Step 2:** Now run the `access_control.py` using the following command:
+
+<pre>
+  sudo python3 access_control.py
+</pre>
+
+
+## Adding a buzzer when Access Granted
 
