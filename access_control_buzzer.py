@@ -35,14 +35,20 @@ def save_authorized_uids(uids):
         json.dump(uids, file, indent=2)
 
 # Play tone for "Access Granted" using PWM for louder passive buzzer output
-def play_success_tone():
+def play_denial_tone():
     buzzer.frequency = 3000  # 3 kHz is often loudest for passive buzzers
-    buzzer.value = 0.5       # 50% duty cycle
+    buzzer.value = .5       # 50% duty cycle
     time.sleep(0.3)
     buzzer.value = 0
     time.sleep(0.1)
-    buzzer.value = 0.5
+    buzzer.value = .5
     time.sleep(0.3)
+    buzzer.value = 0
+    
+def play_success_tone():
+    buzzer.frequency = 3000  # 3 kHz is often loudest for passive buzzers
+    buzzer.value = .5       # 50% duty cycle
+    time.sleep(1.25)
     buzzer.value = 0
 
 # Function to cleanly exit on Ctrl+C
@@ -80,5 +86,6 @@ while continue_reading:
                 play_success_tone()
             else:
                 print("Access Denied.\n")
+                play_denial_tone()
         else:
             print("Could not read UID.\n")
