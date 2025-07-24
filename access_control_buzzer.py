@@ -2,13 +2,14 @@ import MFRC522
 import signal
 import json
 import os
-import RPi.GPIO as GPIO
 import time
+from gpiozero import PWMOutputDevice
 
 continue_reading = True
 
-# GPIO pin where the piezo buzzer is connected
+# GPIO pin where the piezo buzzer is connected (BCM 17 = Pin 11)
 BUZZER_PIN = 17
+buzzer = PWMOutputDevice(BUZZER_PIN)
 
 # Path to the JSON file with authorized UIDs
 AUTHORIZED_UIDS_FILE = "authorized_uids.json"
@@ -33,30 +34,26 @@ def save_authorized_uids(uids):
     with open(AUTHORIZED_UIDS_FILE, "w") as file:
         json.dump(uids, file, indent=2)
 
-# Play tone for "Access Granted"
+# Play tone for "Access Granted" using PWM for louder passive buzzer output
 def play_success_tone():
-    GPIO.output(BUZZER_PIN, GPIO.HIGH)
-    time.sleep(0.2)
-    GPIO.output(BUZZER_PIN, GPIO.LOW)
+    buzzer.frequency = 3000  # 3 kHz is often loudest for passive buzzers
+    buzzer.value = 0.5       # 50% duty cycle
+    time.sleep(0.3)
+    buzzer.value = 0
     time.sleep(0.1)
-    GPIO.output(BUZZER_PIN, GPIO.HIGH)
-    time.sleep(0.2)
-    GPIO.output(BUZZER_PIN, GPIO.LOW)
+    buzzer.value = 0.5
+    time.sleep(0.3)
+    buzzer.value = 0
 
 # Function to cleanly exit on Ctrl+C
 def end_read(signal, frame):
     global continue_reading
     print("\nCtrl+C captured, ending read.")
     continue_reading = False
-    GPIO.cleanup()
+    buzzer.value = 0
 
 # Set up signal capture
 signal.signal(signal.SIGINT, end_read)
-
-# Setup GPIO
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(BUZZER_PIN, GPIO.OUT)
-GPIO.output(BUZZER_PIN, GPIO.LOW)
 
 # Init RFID reader
 MIFAREReader = MFRC522.MFRC522()
