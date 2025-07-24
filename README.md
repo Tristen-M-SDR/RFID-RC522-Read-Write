@@ -84,3 +84,21 @@ From here you can place your RFID Tag or Card near the sensor to read UID and cu
 
 ## Adding a buzzer when Access Granted
 
+**Step 1:** If you refer to the following image, you can see the polarities of the buzzer which is a positive and a negative. Please connect the buzzer to your Raspberry Pi using the following table.
+
+| Name | Pin # | Pin name   |
+|:------:|:-------:|:------------:|
+| Negative    | Any     |  Any Ground  |
+| Positive    | 11      | GPIO17     |
+| 5..12V      | 2       | 5V         |
+
+<img width="258" height="260" alt="image" src="https://github.com/user-attachments/assets/d9a40aa5-5bae-4db3-a53d-231c247dd96f" />
+
+
+**Step 2:** Now run the `access_control_buzzer.py` using the following command:
+
+<pre>
+  sudo python3 access_control_buzzer.py
+</pre>
+
+
