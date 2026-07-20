@@ -31,18 +31,20 @@ Once the menu is open navigate to **Interface Settings** using the `arrow keys`,
 ## Installing the following libraries
 
 <pre>
+  mkdir rfid_ReWr
+  python3 -m venv my_env --system-site-packages
+  source my_env/bin/activate
   sudo apt-get update
   sudo apt install python3-lgpio
-  sudo apt-get install python3-pip --break-system-packages
-  sudo pip3 install spidev --break-system-packages
-  sudo pip3 install MFRC522 --break-system-packages
+  sudo apt-get install python3-pip 
+  pip3 install spidev 
+  pip3 install MFRC522 
 </pre>
 
 ## Setting up the RFID-RC522
 **Step 1:** Download and navigate to the files using the following command:
 
 <pre>
-  cd Downloads/
   git clone https://github.com/Tristen-M-SDR/RFID-RC522-Read-Write
   cd RFID-RC522-Read-Write
 </pre>
