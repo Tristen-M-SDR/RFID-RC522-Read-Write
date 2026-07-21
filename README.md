@@ -37,7 +37,7 @@ Once the menu is open navigate to **Interface Settings** using the `arrow keys`,
   sudo apt-get update
   sudo apt install python3-lgpio
   sudo apt-get install python3-pip 
-  pip3 install spidev  rpi-lgpio mfrc522-python
+  pip3 install spidev rpi-lgpio mfrc522-python
 </pre>
 
 ## Setting up the RFID-RC522
