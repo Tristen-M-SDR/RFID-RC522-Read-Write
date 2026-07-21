@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 
-from mfrc522 import MFRC522  
+import MFRC522  
 import signal
 import sys
 import time
