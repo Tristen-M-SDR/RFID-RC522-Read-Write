@@ -52,7 +52,7 @@ Once the menu is open navigate to **Interface Settings** using the `arrow keys`,
 **Step 2:** Please run the following command to the Read your current RFID Tag
 
 <pre>
-  sudo python3 Read.py
+  python3 Read.py
 </pre>
 
 From here you can place your RFID Tag or Card near the sensor to read UID and current written data on it.
@@ -60,13 +60,13 @@ From here you can place your RFID Tag or Card near the sensor to read UID and cu
 **Step 3:** Please run the following command to Write to your RFID Tag
 
 <pre>
-  sudo python3 Write.py
+  python3 Write.py
 </pre>
 
 **Step 4:** Please rerun the Read.py using the following command:
 
 <pre>
-  sudo python3 Read.py
+  python3 Read.py
 </pre>
 
 ## Adding your RFID-Tag to Access Control List
@@ -74,13 +74,13 @@ From here you can place your RFID Tag or Card near the sensor to read UID and cu
 **Step 1:** Begin by adding your RFID-Tag to the access list.
 
 <pre>
-  sudo python3 Add_Authorization.py
+  python3 Add_Authorization.py
 </pre>
 
 **Step 2:** Now run the `access_control.py` using the following command:
 
 <pre>
-  sudo python3 Access_Control.py
+  python3 Access_Control.py
 </pre>
 
 
@@ -92,7 +92,6 @@ From here you can place your RFID Tag or Card near the sensor to read UID and cu
 |:------:|:-------:|:------------:|
 | Negative    | Any     |  Any Ground  |
 | Positive    | 11      | GPIO17     |
-| 5..12V      | 2       | 5V         |
 
 <img width="258" height="260" alt="image" src="https://github.com/user-attachments/assets/d9a40aa5-5bae-4db3-a53d-231c247dd96f" />
 
@@ -100,7 +99,7 @@ From here you can place your RFID Tag or Card near the sensor to read UID and cu
 **Step 2:** Now run the `access_control_buzzer.py` using the following command:
 
 <pre>
-  sudo python3 Access_Control_Buzzer.py
+  python3 Access_Control_Buzzer.py
 </pre>
 
 
